@@ -62,10 +62,12 @@ gulp.task('css', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp
-    .src(config.paths.js)
-    .pipe(lint({config: 'eslint.config.json'}))
-    .pipe(lint.format());
+	return gulp.src(config.paths.js)
+		.pipe(lint({config: 'eslint.config.json'}))
+		.pipe(lint.format())
+    // To have the process exit with an error code (1) on
+    // lint error, return the stream and pipe to failAfterError last.
+    .pipe(lint.failAfterError());
 });
 
 gulp.task('watch',function() {
