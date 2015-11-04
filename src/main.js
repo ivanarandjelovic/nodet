@@ -1,11 +1,8 @@
 $ = jQuery = require('jquery');
 
 
+errors = 1;
+
 var App = console.log('Hello world from Browserify');
 
 module.exports = App;
-
-
-Testinger  =1;
-
-testinger  =2;
